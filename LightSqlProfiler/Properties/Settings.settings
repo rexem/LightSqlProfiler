@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="LightSqlProfiler.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ConfigFile" Type="System.String" Scope="User">
+      <Value Profile="(Default)">config.json</Value>
+    </Setting>
+    <Setting Name="ManifestUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://namas.geciauskas.com/lsp/manifest.json</Value>
+    </Setting>
+    <Setting Name="HomepageUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://namas.geciauskas.com/lsp</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

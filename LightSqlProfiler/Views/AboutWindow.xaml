@@ -1,0 +1,82 @@
+﻿<cc:MetroWindow x:Class="LightSqlProfiler.Views.AboutWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LightSqlProfiler.Views"
+        xmlns:vm="clr-namespace:LightSqlProfiler.ViewModels"
+        xmlns:cc="http://metro.mahapps.com/winfx/xaml/controls"
+        mc:Ignorable="d" d:DataContext="{d:DesignInstance Type=local:AboutWindow}"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Title="About Light SQL Profiler" Height="400" Width="500">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="310"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="128"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel>
+            <Image Source="/LightSqlProfiler;component/logo.png" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <TextBlock Margin="0,10">
+                <Hyperlink NavigateUri="{Binding HomepageUrl}" RequestNavigate="Link_RequestNavigate">
+                    Homepage
+                </Hyperlink>
+            </TextBlock>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Margin="10,0">
+            <TextBlock Text="Light SQL Profiler" HorizontalAlignment="Center" FontSize="26"/>
+            <TextBlock Text="{Binding VersionString}" HorizontalAlignment="Center"/>
+            <TextBlock Text="© 2019 Ramunas Geciauskas" HorizontalAlignment="Center"/>
+
+            <RichTextBox Height="230" Margin="0,10" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Visible" IsDocumentEnabled="True" IsReadOnly="True" Padding="5">
+                <FlowDocument>
+                    <Paragraph>
+                        Light SQL Profiler uses these libraries:
+                        <LineBreak/>
+                        
+                        - <Hyperlink NavigateUri="https://github.com/icsharpcode/AvalonEdit" RequestNavigate="Link_RequestNavigate">AvalonEdit</Hyperlink>
+                        <LineBreak/>
+
+                        - <Hyperlink NavigateUri="https://logging.apache.org/log4net/" RequestNavigate="Link_RequestNavigate">log4net</Hyperlink>
+                        <LineBreak/>
+
+                        - <Hyperlink NavigateUri="https://mahapps.com/" RequestNavigate="Link_RequestNavigate">mahapps</Hyperlink>
+                        <LineBreak/>
+
+                        -
+                        <Hyperlink NavigateUri="https://www.newtonsoft.com/json" RequestNavigate="Link_RequestNavigate">Newtonsoft Json.NET</Hyperlink>
+                        <LineBreak/>
+
+                        -
+                        <Hyperlink NavigateUri="http://www.jrsoftware.org/isinfo.php" RequestNavigate="Link_RequestNavigate">Inno Setup</Hyperlink>
+                        <LineBreak/>
+                    </Paragraph>
+
+                    <Paragraph>
+                        Released under MIT license:
+                    </Paragraph>
+
+                    <Paragraph FontFamily="Consolas">
+                        Copyright 2019 Ramunas Geciauskas
+                        <LineBreak/>
+                        <LineBreak/>
+                        Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+                        <LineBreak/>
+                        <LineBreak/>
+                        The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+                        <LineBreak/>
+                        <LineBreak/>
+                        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+
+        </StackPanel>
+        <Button Content="Close" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Bottom" Width="75" Margin="5" IsCancel="True" IsDefault="True" Click="Close_Click"/>
+    </Grid>
+</cc:MetroWindow>

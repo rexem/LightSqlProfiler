@@ -1,0 +1,1 @@
+powershell.exe -ExecutionPolicy ByPass -File .\create-setup.ps1

@@ -1,0 +1,43 @@
+﻿<cc:MetroWindow x:Class="LightSqlProfiler.Views.UserSettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LightSqlProfiler.Views"
+        xmlns:cc="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:vm="clr-namespace:LightSqlProfiler.ViewModels"
+        mc:Ignorable="d" d:DataContext="{d:DesignInstance Type=vm:UserSettingsVM}"
+        Title="Settings" Height="400" Width="600" MinHeight="300" MinWidth="400"
+        WindowStartupLocation="CenterOwner">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <cc:MetroAnimatedSingleRowTabControl HorizontalAlignment="Stretch" Margin="10" VerticalAlignment="Stretch" TabStripPlacement="Left">
+            <TabItem Header="General" Style="{DynamicResource TabSized}">
+                <Grid Margin="10,0">
+                    <StackPanel>
+                        <StackPanel.Resources>
+                            <Style BasedOn="{StaticResource MetroCheckBox}" TargetType="{x:Type CheckBox}">
+                                <Setter Property="Margin" Value="0,0,0,5"/>
+                            </Style>
+                        </StackPanel.Resources>
+                        <CheckBox Content="Auto scroll to the end on new event" IsChecked="{Binding Settings.App.AutoScroll}" ToolTip="Makes sure the result list scrolls to the last inserted entry"/>
+                        <CheckBox Content="Add custom trace start event" IsChecked="{Binding Settings.App.AddTraceStartEvent}" ToolTip="Insert custom row when trace starts"/>
+                        <CheckBox Content="Add custom trace stop event" IsChecked="{Binding Settings.App.AddTraceStopEvent}" ToolTip="Insert custom row when trace stops"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="SQL Preview" Style="{DynamicResource TabSized}">
+                <Grid Margin="10">
+                    <CheckBox Content="Wrap text" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="{Binding Settings.Editor.IsWrap}"/>
+                </Grid>
+            </TabItem>
+        </cc:MetroAnimatedSingleRowTabControl>
+
+        <Button Grid.Row="1" Content="Close" HorizontalAlignment="Right" Margin="5" VerticalAlignment="Bottom" Width="75" Command="{Binding CloseCommand}"/>
+    </Grid>
+</cc:MetroWindow>

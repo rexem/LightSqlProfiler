@@ -1,0 +1,44 @@
+﻿<Application x:Class="LightSqlProfiler.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:LightSqlProfiler"
+             xmlns:cc="http://metro.mahapps.com/winfx/xaml/controls"
+             StartupUri="Views/MainWindow.xaml" ShutdownMode="OnMainWindowClose">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Emerald.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style BasedOn="{StaticResource MetroListView}" TargetType="{x:Type ListView}">
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource AccentColorBrush}"/>
+                <Setter Property="ScrollViewer.CanContentScroll" Value="True"/>
+                <Setter Property="Background" Value="{DynamicResource ControlBackgroundBrush}"/>
+            </Style>
+
+            <Style BasedOn="{StaticResource MetroDataGrid}" TargetType="{x:Type DataGrid}">
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource AccentColorBrush}"/>
+                <Setter Property="ScrollViewer.CanContentScroll" Value="True"/>
+                <Setter Property="Background" Value="{DynamicResource ControlBackgroundBrush}"/>
+            </Style>
+
+            <Style x:Key="RedButton" BasedOn="{StaticResource ToolBarButtonBaseStyle}" TargetType="{x:Type Button}">
+                <Setter Property="Foreground" Value="Red"/>
+            </Style>
+
+            <Style x:Key="GreenButton" BasedOn="{StaticResource ToolBarButtonBaseStyle}" TargetType="{x:Type Button}">
+                <Setter Property="Foreground" Value="Green"/>
+            </Style>
+
+            <Style x:Key="TabSized" BasedOn="{StaticResource MetroTabItem}" TargetType="{x:Type TabItem}">
+                <Setter Property="cc:ControlsHelper.HeaderFontSize" Value="14"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
