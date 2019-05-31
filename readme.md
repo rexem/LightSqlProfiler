@@ -6,6 +6,11 @@
 
 Project aims for an easy-to-use, quick setup, and show-me-what's-important approach.
 
+### Install
+[Download](https://github.com/rexem/LightSqlProfiler/releases) and run the latest installation file.
+
+Direct download: [LightSqlProfilerSetup-1.0.exe](https://github.com/rexem/LightSqlProfiler/releases/download/v1.0/LightSqlProfilerSetup-1.0.exe)
+
 ### Features
 
 - Supports all MS SQL Server profiling events and data columns
@@ -18,9 +23,7 @@ Project aims for an easy-to-use, quick setup, and show-me-what's-important appro
 
 <img src="LightSqlProfiler/Data/screenshots/main.png" alt="Light SQL Profiler">
 
-### Install
-
-Download and run the latest installation file.
+### Compiling
 
 To build an application from source, use:
 ```bash
